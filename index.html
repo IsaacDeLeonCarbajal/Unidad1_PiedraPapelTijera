@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel y Tijera</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>Piedra Papel y Tijera</h1>
+
+    <!-- Se cambió el style de los divs para que se mostrarán correctamente -->
+    <div style="float: left; position: relative; left: 350px">
+        <img id="img-jugador" src="res/ninguno.png" alt="Selección del jugador" height="300px">
+
+        <div>
+            <!-- Se cambió el style de los botones para que se mostrará la imagen -->
+            <button id="btn-piedra" style="background-image: url('res/piedra.jpg'); position: relative; left: -20px; width: 50px; height: 50px; background-size: 50px 50px; background-position: center;"></button>
+            <button id="btn-papel" style="background-image: url('res/papel.jpg'); position: relative; left: 0px; width: 50px; height: 50px; background-size: 50px 50px; background-position: center;"></button>
+            <button id="btn-tijera" style="background-image: url('res/tijera.jpg'); position: relative; left: 20px; width: 50px; height: 50px; background-size: 50px 50px; background-position: center;"></button>
+        </div>
+    </div>
+
+    <div style="float: right; position: relative; left: -350px">
+        <img id="img-bot" src="res/ninguno.png" alt="Selección del bot" height="300px">
+    </div>
+
+    <script src="Juego.js"></script>
+
+    <script>
+        var imgJugador = document.getElementById("img-jugador");
+        let juego = new Juego();
+
+        document.getElementById("btn-piedra").addEventListener('click', () => {
+            imgJugador.src = "res/piedra.jpg";
+            juego.turnoJugador('piedra');
+        });
+
+        document.getElementById("btn-papel").addEventListener('click', () => {
+            imgJugador.src = "res/papel.jpg";
+            juego.turnoJugador('papel');
+        });
+
+        document.getElementById("btn-tijera").addEventListener('click', () => {
+            imgJugador.src = "res/tijera.jpg";
+            juego.turnoJugador('tijera');
+        });
+    </script>
+</body>
+
+</html>
